@@ -35,11 +35,12 @@
             this.OutputFolder = new System.Windows.Forms.TextBox();
             this.bExit = new System.Windows.Forms.Button();
             this.bRun = new System.Windows.Forms.Button();
+            this.progress = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // bAbout
             // 
-            this.bAbout.Location = new System.Drawing.Point(12, 118);
+            this.bAbout.Location = new System.Drawing.Point(12, 149);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(75, 23);
             this.bAbout.TabIndex = 0;
@@ -83,7 +84,7 @@
             // 
             // bExit
             // 
-            this.bExit.Location = new System.Drawing.Point(472, 118);
+            this.bExit.Location = new System.Drawing.Point(472, 149);
             this.bExit.Name = "bExit";
             this.bExit.Size = new System.Drawing.Size(75, 23);
             this.bExit.TabIndex = 5;
@@ -93,7 +94,7 @@
             // 
             // bRun
             // 
-            this.bRun.Location = new System.Drawing.Point(391, 118);
+            this.bRun.Location = new System.Drawing.Point(391, 149);
             this.bRun.Name = "bRun";
             this.bRun.Size = new System.Drawing.Size(75, 23);
             this.bRun.TabIndex = 6;
@@ -101,11 +102,19 @@
             this.bRun.UseVisualStyleBackColor = true;
             this.bRun.Click += new System.EventHandler(this.bRun_Click);
             // 
+            // progress
+            // 
+            this.progress.Location = new System.Drawing.Point(12, 119);
+            this.progress.Name = "progress";
+            this.progress.Size = new System.Drawing.Size(535, 12);
+            this.progress.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 157);
+            this.ClientSize = new System.Drawing.Size(559, 190);
+            this.Controls.Add(this.progress);
             this.Controls.Add(this.bRun);
             this.Controls.Add(this.bExit);
             this.Controls.Add(this.OutputFolder);
@@ -129,5 +138,6 @@
         private System.Windows.Forms.TextBox OutputFolder;
         private System.Windows.Forms.Button bExit;
         private System.Windows.Forms.Button bRun;
+        private System.Windows.Forms.ProgressBar progress;
     }
 }
