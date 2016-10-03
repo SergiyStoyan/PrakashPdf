@@ -18,6 +18,7 @@ namespace Cliver.PrakashPdf
         {
             try
             {
+                Log.Initialize(Log.Mode.ONLY_LOG, null, false);
                 InternetDateTime.CHECK_TEST_PERIOD_VALIDITY(2016, 10, 5, false);
                 MainForm mf = new MainForm();
                 Application.Run(mf);

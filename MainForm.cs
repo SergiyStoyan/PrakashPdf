@@ -16,14 +16,14 @@ using System.Threading;
 
 namespace Cliver.PrakashPdf
 {
-    public partial class MainForm : BaseForm
+    public partial class MainForm :BaseForm //Form// 
     {
         public MainForm()
         {
             InitializeComponent();
 
             Text = Application.ProductName;
-            InputFile.Text = "Sakhamuru_res.pdf";
+            //InputFile.Text = "Sakhamuru_res.pdf";
 
             progress.Maximum = 10000;
 

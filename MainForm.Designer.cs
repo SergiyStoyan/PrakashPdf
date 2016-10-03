@@ -36,6 +36,8 @@
             this.bExit = new System.Windows.Forms.Button();
             this.bRun = new System.Windows.Forms.Button();
             this.progress = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bAbout
@@ -60,7 +62,7 @@
             // 
             // bOutputFolder
             // 
-            this.bOutputFolder.Location = new System.Drawing.Point(523, 64);
+            this.bOutputFolder.Location = new System.Drawing.Point(523, 77);
             this.bOutputFolder.Name = "bOutputFolder";
             this.bOutputFolder.Size = new System.Drawing.Size(24, 23);
             this.bOutputFolder.TabIndex = 2;
@@ -77,7 +79,7 @@
             // 
             // OutputFolder
             // 
-            this.OutputFolder.Location = new System.Drawing.Point(12, 64);
+            this.OutputFolder.Location = new System.Drawing.Point(12, 77);
             this.OutputFolder.Name = "OutputFolder";
             this.OutputFolder.Size = new System.Drawing.Size(505, 20);
             this.OutputFolder.TabIndex = 4;
@@ -104,16 +106,36 @@
             // 
             // progress
             // 
-            this.progress.Location = new System.Drawing.Point(12, 109);
+            this.progress.Location = new System.Drawing.Point(12, 122);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(535, 12);
             this.progress.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Input File:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Output Folder:";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 190);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.progress);
             this.Controls.Add(this.bRun);
             this.Controls.Add(this.bExit);
@@ -139,5 +161,7 @@
         private System.Windows.Forms.Button bExit;
         private System.Windows.Forms.Button bRun;
         private System.Windows.Forms.ProgressBar progress;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
