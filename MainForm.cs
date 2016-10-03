@@ -16,7 +16,7 @@ using System.Threading;
 
 namespace Cliver.PrakashPdf
 {
-    public partial class MainForm :BaseForm //Form// 
+    public partial class MainForm : BaseForm //Form// 
     {
         public MainForm()
         {
@@ -57,8 +57,9 @@ namespace Cliver.PrakashPdf
         {
             if (t != null && t.IsAlive)
             {
-                if (Message.YesNo("Extraction is running. Would you like to wait until it is completed? Otherwise, it will be restated."))
+                if (!Message.YesNo("Extraction is running. Would you like to abort it and restart?"))
                     return;
+                t.Abort();
             }
             t = Cliver.ThreadRoutines.StartTry(run);
         }
@@ -124,7 +125,7 @@ namespace Cliver.PrakashPdf
         {
             if (t != null && t.IsAlive)
             {
-                if(Message.YesNo("Extraction is running. Would you like to wait until it is completed?"))
+                if(!Message.YesNo("Extraction is running. Would you like to abort it?"))
                     return;
             }
             Close();
