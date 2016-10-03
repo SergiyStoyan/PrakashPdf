@@ -43,7 +43,7 @@
             this.logoPictureBox.BackColor = System.Drawing.Color.White;
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
-            this.logoPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.InitialImage")));
+            this.logoPictureBox.InitialImage = null;
             this.logoPictureBox.Location = new System.Drawing.Point(0, 0);
             this.logoPictureBox.Name = "logoPictureBox";
             this.logoPictureBox.Size = new System.Drawing.Size(434, 67);

@@ -10,7 +10,7 @@ using Cliver;
 
 namespace Cliver.PrakashPdf
 {
-    partial class AboutBox : BaseForm //
+    partial class AboutBox : BaseForm //Form// 
     {
         public AboutBox()
         {
