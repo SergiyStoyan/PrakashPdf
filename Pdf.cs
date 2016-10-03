@@ -52,7 +52,6 @@ namespace Cliver.PrakashPdf
                 foreach (RenderFilter[] f in fs)
                 {
                     ITextExtractionStrategy s = new FilteredTextRenderListener(new LocationTextExtractionStrategy(), f);
-                    string g = PdfTextExtractor.GetTextFromPage(pr, i, s).Trim();
                     vs.Add(PdfTextExtractor.GetTextFromPage(pr, i, s).Trim());
                 }
                 progress?.Invoke((float)i / pr.NumberOfPages);

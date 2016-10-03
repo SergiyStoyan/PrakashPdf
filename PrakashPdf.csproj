@@ -7,7 +7,7 @@
     <ProjectGuid>{B1D7BA69-35AA-45BD-B1D0-D84FD2BC47A0}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>App.ico</ApplicationIcon>
+    <ApplicationIcon>3RINGS~1.ICO</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>PrakashPdf</AssemblyName>
@@ -127,11 +127,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="3RINGS~1.ICO" />
     <Content Include="App.ico" />
     <Compile Include="AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AboutBox.Designer.cs" />
+    <Compile Include="InternetDateTime.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -50,7 +50,7 @@
             // 
             // bInputFile
             // 
-            this.bInputFile.Location = new System.Drawing.Point(523, 36);
+            this.bInputFile.Location = new System.Drawing.Point(523, 26);
             this.bInputFile.Name = "bInputFile";
             this.bInputFile.Size = new System.Drawing.Size(24, 23);
             this.bInputFile.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             // bOutputFolder
             // 
-            this.bOutputFolder.Location = new System.Drawing.Point(523, 74);
+            this.bOutputFolder.Location = new System.Drawing.Point(523, 64);
             this.bOutputFolder.Name = "bOutputFolder";
             this.bOutputFolder.Size = new System.Drawing.Size(24, 23);
             this.bOutputFolder.TabIndex = 2;
@@ -70,14 +70,14 @@
             // 
             // InputFile
             // 
-            this.InputFile.Location = new System.Drawing.Point(12, 39);
+            this.InputFile.Location = new System.Drawing.Point(12, 29);
             this.InputFile.Name = "InputFile";
             this.InputFile.Size = new System.Drawing.Size(505, 20);
             this.InputFile.TabIndex = 3;
             // 
             // OutputFolder
             // 
-            this.OutputFolder.Location = new System.Drawing.Point(12, 74);
+            this.OutputFolder.Location = new System.Drawing.Point(12, 64);
             this.OutputFolder.Name = "OutputFolder";
             this.OutputFolder.Size = new System.Drawing.Size(505, 20);
             this.OutputFolder.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             // progress
             // 
-            this.progress.Location = new System.Drawing.Point(12, 119);
+            this.progress.Location = new System.Drawing.Point(12, 109);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(535, 12);
             this.progress.TabIndex = 7;

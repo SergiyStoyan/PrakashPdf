@@ -16,12 +16,13 @@ using System.Threading;
 
 namespace Cliver.PrakashPdf
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseForm
     {
         public MainForm()
         {
             InitializeComponent();
 
+            Text = Application.ProductName;
             InputFile.Text = "Sakhamuru_res.pdf";
 
             progress.Maximum = 10000;
@@ -54,10 +55,10 @@ namespace Cliver.PrakashPdf
 
         private void bRun_Click(object sender, EventArgs e)
         {
-            if(t!=null && t.IsAlive)
+            if (t != null && t.IsAlive)
             {
-                Message.Error("Already started.");
-                return;
+                if (Message.YesNo("Extraction is running. Would you like to wait until it is completed? Otherwise, it will be restated."))
+                    return;
             }
             t = Cliver.ThreadRoutines.StartTry(run);
         }
@@ -78,10 +79,10 @@ namespace Cliver.PrakashPdf
                 return;
             }
 
-            string csv = OutputFolder.Text + "\\" + Regex.Replace(InputFile.Text, @"(?:.*\\|^)(.*)\..*$", "$1.csv");
-            if (File.Exists(csv))
-                File.Delete(csv);
-            List<string> ls = new List<string>();
+            //string csv = OutputFolder.Text + "\\" + Regex.Replace(InputFile.Text, @"(?:.*\\|^)(.*)\..*$", "$1.csv");
+            //if (File.Exists(csv))
+            //    File.Delete(csv);
+            //List<string> ls = new List<string>();
 
             string xls = OutputFolder.Text + "\\" + Regex.Replace(InputFile.Text, @"(?:.*\\|^)(.*)\..*$", "$1.xlsx");
             if (File.Exists(xls))
@@ -103,12 +104,12 @@ namespace Cliver.PrakashPdf
                     for (int j = 0; j < ss.Count; j++)
                         worksheet.Cells[i, j + 1].Value = ss[j];
 
-                    ls.Add(Cliver.FieldPreparation.GetCsvLine(ss));
+                    //ls.Add(Cliver.FieldPreparation.GetCsvLine(ss));
                 }
                 worksheet.Cells.Style.Numberformat.Format = "@";
                 package.Save();
 
-                File.WriteAllLines(csv, ls);
+                //File.WriteAllLines(csv, ls);
             }
             Message.Inform("Completed");
         }
@@ -121,6 +122,11 @@ namespace Cliver.PrakashPdf
 
         private void bExit_Click(object sender, EventArgs e)
         {
+            if (t != null && t.IsAlive)
+            {
+                if(Message.YesNo("Extraction is running. Would you like to wait until it is completed?"))
+                    return;
+            }
             Close();
             Environment.Exit(0);
         }
