@@ -38,11 +38,13 @@
             this.progress = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Rectangles = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bAbout
             // 
-            this.bAbout.Location = new System.Drawing.Point(12, 149);
+            this.bAbout.Location = new System.Drawing.Point(12, 394);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(75, 23);
             this.bAbout.TabIndex = 0;
@@ -86,7 +88,7 @@
             // 
             // bExit
             // 
-            this.bExit.Location = new System.Drawing.Point(472, 149);
+            this.bExit.Location = new System.Drawing.Point(472, 394);
             this.bExit.Name = "bExit";
             this.bExit.Size = new System.Drawing.Size(75, 23);
             this.bExit.TabIndex = 5;
@@ -96,7 +98,7 @@
             // 
             // bRun
             // 
-            this.bRun.Location = new System.Drawing.Point(391, 149);
+            this.bRun.Location = new System.Drawing.Point(391, 394);
             this.bRun.Name = "bRun";
             this.bRun.Size = new System.Drawing.Size(75, 23);
             this.bRun.TabIndex = 6;
@@ -106,7 +108,7 @@
             // 
             // progress
             // 
-            this.progress.Location = new System.Drawing.Point(12, 122);
+            this.progress.Location = new System.Drawing.Point(12, 367);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(535, 12);
             this.progress.TabIndex = 7;
@@ -129,11 +131,30 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Output Folder:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Rectangles:";
+            // 
+            // Rectangles
+            // 
+            this.Rectangles.Location = new System.Drawing.Point(12, 127);
+            this.Rectangles.Multiline = true;
+            this.Rectangles.Name = "Rectangles";
+            this.Rectangles.Size = new System.Drawing.Size(535, 219);
+            this.Rectangles.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 190);
+            this.ClientSize = new System.Drawing.Size(559, 439);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Rectangles);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progress);
@@ -163,5 +184,7 @@
         private System.Windows.Forms.ProgressBar progress;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox Rectangles;
     }
 }

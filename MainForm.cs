@@ -23,7 +23,19 @@ namespace Cliver.PrakashPdf
             InitializeComponent();
 
             Text = Application.ProductName;
-            //InputFile.Text = "Sakhamuru_res.pdf";
+            InputFile.Text = "Sakhamuru_res.pdf";
+
+            Rectangles.Text = @"(350, 555, 340, 50)
+                                (350, 515, 340, 35)
+                                (350, 495, 340, 20)
+                                (350, 470, 340, 15)
+                                (220, 445, 340, 20)
+                                (220, 425, 340, 20)
+                                (0, 400, 120, 10),
+                                (120, 400, 90, 10),
+                                (210, 400, 150, 10)
+                                (360, 400, 120, 10)
+                                (480, 400, 150, 10)";
 
             progress.Maximum = 10000;
 
@@ -61,25 +73,34 @@ namespace Cliver.PrakashPdf
                     return;
                 t.Abort();
             }
-            t = Cliver.ThreadRoutines.StartTry(run);
+            t = Cliver.ThreadRoutines.StartTry(()=> { run(InputFile.Text, OutputFolder.Text, Rectangles.Text); });
         }
 
         Thread t = null;
 
-        private void run()
+        private void run(string input_file, string output_folder, string rectangles_string)
         {
             progress.Value = 0;
-            if (string.IsNullOrWhiteSpace(InputFile.Text))
+            if (string.IsNullOrWhiteSpace(input_file))
             {
                 Message.Error("InputFile is empty.");
                 return;
             }
-            if (string.IsNullOrWhiteSpace(OutputFolder.Text))
+            if (string.IsNullOrWhiteSpace(output_folder))
             {
                 Message.Error("OutputFolder is empty.");
                 return;
             }
-
+            List<System.util.RectangleJ> rectangles = new List<System.util.RectangleJ>();
+            if (string.IsNullOrWhiteSpace(rectangles_string))
+            {
+                Message.Error("Rectangles is empty.");
+                return;
+            }
+            rectangles_string = Regex.Replace(rectangles_string, @"\s+", "", RegexOptions.Singleline);
+            for (Match m = Regex.Match(rectangles_string, @"\((\d+),(\d+),(\d+),(\d+)\)", RegexOptions.Singleline); m.Success; m = m.NextMatch())
+                rectangles.Add(new System.util.RectangleJ(float.Parse(m.Groups[1].Value), float.Parse(m.Groups[2].Value), float.Parse(m.Groups[3].Value), float.Parse(m.Groups[4].Value)));
+         
             //string csv = OutputFolder.Text + "\\" + Regex.Replace(InputFile.Text, @"(?:.*\\|^)(.*)\..*$", "$1.csv");
             //if (File.Exists(csv))
             //    File.Delete(csv);
@@ -92,7 +113,7 @@ namespace Cliver.PrakashPdf
             {
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(Regex.Replace(InputFile.Text, @"(?:.*\\|^)(.*)\..*$", "$1"));
                 int i = 0;
-                foreach (List<string> ss in Pdf.Get(InputFile.Text,
+                foreach (List<string> ss in Pdf.Get(InputFile.Text, rectangles,
                     (float pv) =>
                     {
                         float p = (float)progress.Maximum * pv;
