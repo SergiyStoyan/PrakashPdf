@@ -44,7 +44,7 @@
             // 
             // bAbout
             // 
-            this.bAbout.Location = new System.Drawing.Point(12, 394);
+            this.bAbout.Location = new System.Drawing.Point(12, 331);
             this.bAbout.Name = "bAbout";
             this.bAbout.Size = new System.Drawing.Size(75, 23);
             this.bAbout.TabIndex = 0;
@@ -88,7 +88,7 @@
             // 
             // bExit
             // 
-            this.bExit.Location = new System.Drawing.Point(472, 394);
+            this.bExit.Location = new System.Drawing.Point(472, 331);
             this.bExit.Name = "bExit";
             this.bExit.Size = new System.Drawing.Size(75, 23);
             this.bExit.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // bRun
             // 
-            this.bRun.Location = new System.Drawing.Point(391, 394);
+            this.bRun.Location = new System.Drawing.Point(391, 331);
             this.bRun.Name = "bRun";
             this.bRun.Size = new System.Drawing.Size(75, 23);
             this.bRun.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // progress
             // 
-            this.progress.Location = new System.Drawing.Point(12, 367);
+            this.progress.Location = new System.Drawing.Point(12, 304);
             this.progress.Name = "progress";
             this.progress.Size = new System.Drawing.Size(535, 12);
             this.progress.TabIndex = 7;
@@ -136,23 +136,23 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 111);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(164, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Rectangles:";
+            this.label3.Text = "Rectangles (X, Y, Width, Height):";
             // 
             // Rectangles
             // 
             this.Rectangles.Location = new System.Drawing.Point(12, 127);
             this.Rectangles.Multiline = true;
             this.Rectangles.Name = "Rectangles";
-            this.Rectangles.Size = new System.Drawing.Size(535, 219);
+            this.Rectangles.Size = new System.Drawing.Size(535, 152);
             this.Rectangles.TabIndex = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 439);
+            this.ClientSize = new System.Drawing.Size(559, 369);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Rectangles);
             this.Controls.Add(this.label2);
